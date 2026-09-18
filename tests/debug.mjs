@@ -1,0 +1,14 @@
+import { JSDOM, VirtualConsole } from "jsdom";
+import fs from "node:fs";
+const slug=process.argv[2];
+const dir=`/home/claude/intact/proj/tests/pages/${slug}`;
+const html=fs.readFileSync(`${dir}/source.html`,"utf8");
+const meta=JSON.parse(fs.readFileSync(`${dir}/meta.json`,"utf8"));
+const vc=new VirtualConsole(); vc.on("jsdomError",()=>{});
+const dom=new JSDOM(html,{url:meta.url,runScripts:"outside-only",pretendToBeVisual:true,virtualConsole:vc});
+const w=dom.window;
+w.eval(fs.readFileSync("/home/claude/intact/proj/vendor/defuddle.js","utf8"));
+w.eval(fs.readFileSync("/home/claude/intact/proj/src/extractor.js","utf8"));
+const r=await w.__intactExtract({debug:true,fetchImages:false});
+console.log("repairs",JSON.stringify(r.repairs));
+console.log(r.debugHtml.slice(0, parseInt(process.argv[3]||"6000")));

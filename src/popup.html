@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intact</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- Connect -->
+    <section id="view-connect" hidden>
+      <header class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <h1>Intact</h1>
+      </header>
+      <p class="lede">Save the whole article to Notion, not just the link.</p>
+      <button id="connect" class="primary">Connect Notion</button>
+      <p id="oauth-note" class="hint">You pick which pages Intact can write to. It never reads your Notion content.</p>
+
+      <p id="dev-note" class="hint" hidden>
+        Development build. Paste an integration token from
+        notion.so/my-integrations, then share a Notion page with that
+        integration so it shows up below.
+      </p>
+
+      <details id="dev-auth">
+        <summary>Use an integration token instead</summary>
+        <label for="token">Internal integration token</label>
+        <input id="token" type="password" placeholder="ntn_..." autocomplete="off">
+        <button id="connect-token" class="ghost">Connect with token</button>
+      </details>
+
+      <p id="connect-error" class="error" hidden></p>
+    </section>
+
+    <!-- Clip -->
+    <section id="view-clip" hidden>
+      <header class="topbar">
+        <div class="where">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="workspace">Notion</span>
+        </div>
+        <button id="disconnect" class="link">Disconnect</button>
+      </header>
+
+      <div id="pending" class="notice" hidden>
+        <p><strong>Unfinished clip.</strong> <span id="pending-text"></span></p>
+        <div class="row">
+          <button id="resume" class="ghost small">Resume</button>
+          <button id="discard" class="link">Discard</button>
+          <a id="pending-open" class="link" href="#" target="_blank" rel="noreferrer">Open page</a>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>Title</span>
+        <input id="title" type="text" autocomplete="off">
+      </label>
+
+      <label class="field">
+        <span>Save to</span>
+        <select id="destination"></select>
+      </label>
+
+      <div id="properties"></div>
+
+      <label class="field">
+        <span>Capture</span>
+        <select id="mode">
+          <option value="article">Article (automatic)</option>
+          <option value="selection">Only the text I selected</option>
+          <option value="bookmark">Bookmark (title, link, description)</option>
+          <option value="screenshot">Screenshot of the visible area</option>
+        </select>
+      </label>
+
+      <label class="checkbox">
+        <input id="include-cover" type="checkbox" checked>
+        <span>Use the page image as cover</span>
+      </label>
+
+      <p id="summary" class="summary">Reading page…</p>
+
+      <div id="quality" class="notice warn" hidden>
+        <p id="quality-text"></p>
+        <div class="row">
+          <button id="quality-selection" class="ghost small">Use my selection</button>
+          <button id="quality-bookmark" class="ghost small">Save as bookmark</button>
+          <button id="quality-screenshot" class="ghost small">Screenshot</button>
+        </div>
+      </div>
+
+      <button id="clip" class="primary" disabled>Save to Notion</button>
+
+      <p id="clip-error" class="error" hidden></p>
+      <p id="clip-partial" class="error" hidden>
+        <a id="partial-open" href="#" target="_blank" rel="noreferrer">Open the partial page</a> ·
+        <button id="partial-resume" class="link">Resume</button>
+      </p>
+      <p id="clip-done" class="done" hidden>
+        Saved. <a id="open-page" href="#" target="_blank" rel="noreferrer">Open in Notion</a>
+      </p>
+      <p id="clip-badge" class="badge" hidden></p>
+      <details id="degraded" hidden>
+        <summary id="degraded-summary">What changed</summary>
+        <ul id="degraded-list" class="degraded"></ul>
+      </details>
+
+      <footer class="footer">
+        <button id="report" class="link">Something looks wrong on this page?</button>
+      </footer>
+
+      <section id="report-panel" class="report" hidden>
+        <p class="hint">
+          This diagnostic bundle contains the page URL, the extracted content and
+          the generated Notion blocks. Review it, remove anything private, then
+          copy it into a bug report. Nothing is sent automatically.
+        </p>
+        <textarea id="report-json" rows="8" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="report-copy" class="ghost small">Copy</button>
+          <a id="report-issue" class="ghost small linkbtn" href="#" target="_blank" rel="noreferrer">Open issue form</a>
+          <button id="report-close" class="link">Close</button>
+        </div>
+      </section>
+    </section>
+
+  </main>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

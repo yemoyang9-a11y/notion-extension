@@ -1,0 +1,20 @@
+{
+  "name": "intact",
+  "version": "0.2.0",
+  "description": "",
+  "scripts": {
+    "test": "node tests/run.mjs && node tests/background.test.mjs",
+    "fixtures": "node tests/make-fixtures.mjs",
+    "build": "node build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^30.1.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

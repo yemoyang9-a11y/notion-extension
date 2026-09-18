@@ -1,0 +1,78 @@
+{
+  "blocks": [
+    {
+      "type": "bulleted_list_item",
+      "includes": [
+        "1단계 A"
+      ]
+    },
+    {
+      "type": "bulleted_list_item",
+      "includes": [
+        "2단계 A1"
+      ]
+    },
+    {
+      "type": "bulleted_list_item",
+      "includes": [
+        "3단계 A1a"
+      ]
+    },
+    {
+      "type": "bulleted_list_item",
+      "includes": [
+        "3단계 A1b"
+      ]
+    },
+    {
+      "type": "bulleted_list_item",
+      "includes": [
+        "1단계 B"
+      ]
+    },
+    {
+      "type": "to_do",
+      "includes": [
+        "완료된 일"
+      ]
+    },
+    {
+      "type": "to_do",
+      "includes": [
+        "남은 일"
+      ]
+    },
+    {
+      "type": "table",
+      "width": 3,
+      "rows": 3,
+      "includes": [
+        "병합된 셀 |  | 1"
+      ]
+    },
+    {
+      "type": "toggle",
+      "includes": [
+        "더 보기"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "includes": [
+        "접힌 내용"
+      ]
+    },
+    {
+      "type": "code",
+      "includes": [
+        "hidden code"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "includes": [
+        "용어"
+      ]
+    }
+  ]
+}

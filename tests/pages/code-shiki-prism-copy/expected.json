@@ -1,0 +1,32 @@
+{
+  "blocks": [
+    {
+      "type": "code",
+      "language": "json",
+      "includes": [
+        "{\n  \"name\": \"intact\"\n}"
+      ],
+      "excludes": [
+        "Copy",
+        "package.json"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "bash",
+      "includes": [
+        "npm install\nnpm run build"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "includes": [
+        "export default App;\n// end"
+      ],
+      "excludes": [
+        "Copy"
+      ]
+    }
+  ]
+}

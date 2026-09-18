@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light dark;
+  --bg: #FBFAF8;
+  --surface: #FFFFFF;
+  --ink: #1B1A17;
+  --ink-soft: #55524B;
+  --ink-mute: #85817A;
+  --rule: #E2DFD8;
+  --accent: #2F6F5B;
+  --accent-ink: #FFFFFF;
+  --error: #9C3B32;
+  --ok: #2F7A5B;
+  --font: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181A;
+    --surface: #1F2123;
+    --ink: #ECEAE5;
+    --ink-soft: #BEBAB2;
+    --ink-mute: #8C8880;
+    --rule: #33363A;
+    --accent: #63B394;
+    --accent-ink: #10221B;
+    --error: #E08076;
+    --ok: #63B394;
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* Author styles beat the browser's own [hidden] rule, and `section` below
+   sets display, so a hidden section would otherwise stay on screen. */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  width: 360px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+main { padding: 14px 16px 16px; display: grid; gap: 12px; }
+section { display: grid; gap: 12px; }
+
+.brand { display: flex; align-items: center; gap: 8px; }
+.brand h1 { margin: 0; font-size: 16px; font-weight: 650; letter-spacing: -0.01em; }
+.mark {
+  width: 14px; height: 14px; border-radius: 3px;
+  background: var(--accent);
+  box-shadow: inset 0 0 0 3px var(--bg);
+}
+
+.lede { margin: 0; color: var(--ink-soft); }
+.hint { margin: 0; color: var(--ink-mute); font-size: 11.5px; }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+}
+.where { display: flex; align-items: center; gap: 7px; font-weight: 550; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+
+.field { display: grid; gap: 4px; }
+.field > span { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mute); }
+
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], select {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+select { appearance: none; padding-right: 26px; }
+
+input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.checkbox { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); }
+.checkbox input { margin: 0; accent-color: var(--accent); }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+.primary:disabled { opacity: 0.55; cursor: default; }
+
+.ghost {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--ink-mute);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.summary { margin: 0; color: var(--ink-mute); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.error { margin: 0; color: var(--error); font-size: 12px; }
+.done { margin: 0; color: var(--ok); font-size: 12px; }
+.done a { color: var(--ok); }
+
+#properties { display: grid; gap: 10px; }
+#properties:empty { display: none; }
+
+details { border-top: 1px solid var(--rule); padding-top: 10px; display: grid; gap: 6px; }
+summary { cursor: pointer; color: var(--ink-mute); font-size: 12px; }
+details label { font-size: 11px; color: var(--ink-mute); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* --- added: notices, badges, report panel --- */
+.notice {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--surface);
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+.notice p { margin: 0; }
+.notice.warn { border-color: color-mix(in srgb, var(--error) 45%, var(--rule)); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.small { padding: 5px 9px; font-size: 12px; }
+.linkbtn { text-decoration: none; display: inline-block; }
+.badge { margin: 0; color: var(--ink-soft); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.degraded { margin: 0; padding-left: 16px; font-size: 11px; color: var(--ink-mute); display: grid; gap: 3px; }
+.footer { border-top: 1px solid var(--rule); padding-top: 8px; }
+.report { display: grid; gap: 8px; }
+.report textarea {
+  width: 100%;
+  font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px;
+  resize: vertical;
+}

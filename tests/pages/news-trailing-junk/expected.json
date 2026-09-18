@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "includes": [
+        "결론적으로 시장은"
+      ]
+    }
+  ],
+  "excludesText": [
+    "관련 기사 하나",
+    "무단전재",
+    "구독하기"
+  ],
+  "includesText": [
+    "결론적으로 시장은"
+  ]
+}

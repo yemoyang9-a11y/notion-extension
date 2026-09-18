@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Intact - Web Clipper for Notion",
+  "version": "0.2.0",
+  "description": "Save the whole article to Notion, not just the link. Keeps headings, lists, tables, code and math intact.",
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_title": "Clip this page",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "identity",
+    "contextMenus",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://api.notion.com/*",
+    "https://*.pstatic.net/*",
+    "https://*.naver.net/*",
+    "https://*.kakaocdn.net/*",
+    "https://*.daumcdn.net/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

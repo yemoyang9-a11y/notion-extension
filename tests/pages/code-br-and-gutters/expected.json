@@ -1,0 +1,51 @@
+{
+  "blocks": [
+    {
+      "type": "code",
+      "includes": [
+        "def foo():\n    return 1\n\nprint(foo())"
+      ],
+      "language": "python"
+    },
+    {
+      "type": "code",
+      "includes": [
+        "import os\nprint(os.getcwd())"
+      ],
+      "excludes": [
+        "1import",
+        "2print"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "go",
+      "includes": [
+        "package main\nimport \"fmt\"\nfunc main()"
+      ],
+      "excludes": [
+        "1package"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "ruby",
+      "includes": [
+        "def hello\n  puts \"hi\""
+      ],
+      "excludes": [
+        "1\n2"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "includes": [
+        "const a = 1;\nconsole.log(a);"
+      ]
+    }
+  ],
+  "excludesText": [
+    "Home About"
+  ]
+}

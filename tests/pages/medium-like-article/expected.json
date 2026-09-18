@@ -1,0 +1,42 @@
+{
+  "blocks": [
+    {
+      "type": "code",
+      "includes": [
+        "for i in range(3):\n    print(i)"
+      ]
+    },
+    {
+      "type": "image",
+      "includes": [
+        "1*abc.png"
+      ]
+    },
+    {
+      "type": "quote",
+      "includes": [
+        "Measure before"
+      ]
+    },
+    {
+      "type": "numbered_list_item",
+      "includes": [
+        "First step"
+      ]
+    },
+    {
+      "type": "numbered_list_item",
+      "includes": [
+        "Second step"
+      ]
+    }
+  ],
+  "excludesText": [
+    "Another story"
+  ],
+  "minWords": 80,
+  "quality": {
+    "paywall": false,
+    "lowContent": false
+  }
+}

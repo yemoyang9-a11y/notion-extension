@@ -1,0 +1,32 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "includes": [
+        "Av = \\lambda v"
+      ]
+    },
+    {
+      "type": "equation",
+      "equals": "\\det(A - \\lambda I) = 0"
+    },
+    {
+      "type": "paragraph",
+      "includes": [
+        "x^2 + y^2 = z^2"
+      ]
+    },
+    {
+      "type": "equation",
+      "includes": [
+        "\\sum_{i=1}^{n}"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "includes": [
+        "e^{i\\pi }+1=0"
+      ]
+    }
+  ]
+}

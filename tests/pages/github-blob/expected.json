@@ -1,0 +1,19 @@
+{
+  "via": "site-handler",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "includes": [
+        "yemo/intact · src/extractor.py"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "includes": [
+        "def main(argv):\n    print(\"hello\", argv)"
+      ],
+      "lines": 9
+    }
+  ]
+}

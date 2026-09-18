@@ -1,0 +1,31 @@
+{
+  "blocks": [
+    {
+      "type": "code",
+      "language": "kotlin",
+      "includes": [
+        "fun main() {\n    println(\"hello\")\n}"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "includes": [
+        "import json\n\ndata = json.loads(\"{}\")"
+      ],
+      "excludes": [
+        "Colored by",
+        "1\n2\n3"
+      ]
+    },
+    {
+      "type": "image",
+      "includes": [
+        "blog.kakaocdn.net/dn/abc123/btrXYZ/img.png"
+      ]
+    }
+  ],
+  "excludesText": [
+    "Colored by Color Scripter"
+  ]
+}

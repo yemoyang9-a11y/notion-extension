@@ -1,0 +1,29 @@
+{
+  "blocks": [
+    {
+      "type": "paragraph",
+      "includes": [
+        "a^2+b^2=c^2"
+      ],
+      "excludes": [
+        "a²+b²"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "includes": [
+        "def f(x):\n    return x**2"
+      ]
+    },
+    {
+      "type": "code",
+      "includes": [
+        "echo hi\necho bye"
+      ],
+      "excludes": [
+        "1echo"
+      ]
+    }
+  ]
+}

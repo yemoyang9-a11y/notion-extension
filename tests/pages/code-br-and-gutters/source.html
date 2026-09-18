@@ -1,0 +1,31 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>코드블록: br 줄바꿈과 줄번호</title>
+<meta property="og:title" content="코드블록: br 줄바꿈과 줄번호"><meta property="og:image" content="https://example.com/cover.png"></head>
+<body><header class="site-header"><nav><a href="/">Home</a><a href="/about">About</a></nav></header>
+<main><article>
+<h1>코드블록: br 줄바꿈과 줄번호</h1>
+<p>문단 1. 이 문장은 본문을 채우기 위한 일반적인 설명 문장이며 클리퍼가 본문으로 인식할 만큼 충분히 길게 작성되어 있습니다. Sentence 1 of the article body, long enough to count as content.</p>
+<p>문단 2. 이 문장은 본문을 채우기 위한 일반적인 설명 문장이며 클리퍼가 본문으로 인식할 만큼 충분히 길게 작성되어 있습니다. Sentence 2 of the article body, long enough to count as content.</p>
+<p>문단 3. 이 문장은 본문을 채우기 위한 일반적인 설명 문장이며 클리퍼가 본문으로 인식할 만큼 충분히 길게 작성되어 있습니다. Sentence 3 of the article body, long enough to count as content.</p>
+<h2>br로 줄을 나눈 코드</h2>
+<pre class="brush: python">def foo():<br>    return 1<br><br>print(foo())</pre>
+<h2>Pygments 줄번호 (Sphinx)</h2>
+<div class="highlight"><pre><span class="linenos">1</span><span class="k">import</span> <span class="nn">os</span>
+<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+<h2>Chroma (Hugo) 줄번호</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">)</span> <span class="p">}</span>
+</span></span></code></pre></div>
+<h2>Rouge (Jekyll) 테이블 줄번호</h2>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">hello</span>
+  <span class="nb">puts</span> <span class="s2">"hi"</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+<h2>hljs-ln 테이블</h2>
+<pre><code class="hljs language-javascript"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">const a = 1;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">console.log(a);</div></td></tr></tbody></table></code></pre>
+<p>문단 1. 이 문장은 본문을 채우기 위한 일반적인 설명 문장이며 클리퍼가 본문으로 인식할 만큼 충분히 길게 작성되어 있습니다. Sentence 1 of the article body, long enough to count as content.</p>
+<p>문단 2. 이 문장은 본문을 채우기 위한 일반적인 설명 문장이며 클리퍼가 본문으로 인식할 만큼 충분히 길게 작성되어 있습니다. Sentence 2 of the article body, long enough to count as content.</p>
+</article></main>
+<footer class="site-footer"><p>© Example. All rights reserved.</p></footer></body></html>

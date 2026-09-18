@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "type": "video",
+      "includes": [
+        "youtube.com/watch?v=dQw4w9WgXcQ"
+      ]
+    },
+    {
+      "type": "bookmark",
+      "includes": [
+        "gist.github.com"
+      ]
+    },
+    {
+      "type": "bookmark",
+      "includes": [
+        "clip.mp4"
+      ]
+    },
+    {
+      "type": "embed",
+      "includes": [
+        "platform.twitter.com"
+      ]
+    }
+  ]
+}

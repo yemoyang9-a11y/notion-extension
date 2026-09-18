@@ -1,0 +1,34 @@
+{
+  "blocks": [
+    {
+      "type": "image",
+      "includes": [
+        "photo-1.jpg"
+      ],
+      "excludes": [
+        "data:"
+      ]
+    },
+    {
+      "type": "image",
+      "includes": [
+        "images.unsplash.com"
+      ]
+    },
+    {
+      "type": "image",
+      "includes": [
+        "hero.webp"
+      ]
+    },
+    {
+      "type": "image",
+      "includes": [
+        "X-Amz-Signature"
+      ]
+    }
+  ],
+  "excludesText": [
+    "pixel.gif"
+  ]
+}
