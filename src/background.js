@@ -11,7 +11,7 @@ const TOKEN_EXCHANGE_URL = "https://REPLACE.workers.dev/token";
 const NOTION_AUTHORIZE_URL = "https://api.notion.com/v1/oauth/authorize";
 const NOTION_API = "https://api.notion.com/v1";
 const NOTION_VERSION = "2026-03-11";
-const REPORT_ISSUE_URL = "https://github.com/REPLACE_OWNER/intact/issues/new";
+const REPORT_ISSUE_URL = "https://github.com/yemoyang9-a11y/notion-extension/issues/new";
 
 const LIMITS = {
   TEXT: 2000,
