@@ -128,12 +128,20 @@ async function listDestinations(token) {
     dataSources.push({ kind: "data_source", id: item.id, title: plain(item.title) || "Untitled database" });
   };
   const errors = [];
-  for (const run of [() => search("data_source", addDs), () => search("database", addDs), () => search("page", (p) => { if (!p.archived && !p.in_trash) pages.push({ kind: "page", id: p.id, title: pageTitle(p) || "Untitled page" }); })]) {
+  // API 2025-09+ exposes databases as data sources; older versions reject
+  // the "data_source" filter, so fall back to "database" only in that case.
+  for (const run of [() => search("data_source", addDs), () => search("page", (p) => { if (!p.archived && !p.in_trash) pages.push({ kind: "page", id: p.id, title: pageTitle(p) || "Untitled page" }); })]) {
     try {
       await run();
     } catch (e) {
       errors.push(e);
     }
+  }
+  if (errors.length && !dataSources.length) {
+    try {
+      await search("database", addDs);
+      errors.length = 0;
+    } catch {}
   }
   if (!dataSources.length && !pages.length && errors.length) throw errors[0];
   return { dataSources, pages };
